@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card shadow-lg my-5">
+        <div class="card-header">
+          Register
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registrationForm">
+            <div class="form-group">
+              <label for="input-email" class="form-control-label">
+                Email
+              </label>
+              <input type="text" formControlName="email" name="email" id="input-email" class="form-control">
+              <small class="text-danger"
+                *ngIf="registrationForm.controls.email.touched && registrationForm.controls.email.invalid">Invalid
+                Email</small>
+            </div>
+            <div class="form-group">
+              <label for="input-password" class="form-control-label">
+                Password
+              </label>
+              <input type="password" formControlName="password" name="password" id="input-password"
+                class="form-control">
+              <small class="text-danger"
+                *ngIf="registrationForm.controls.password.touched && registrationForm.controls.password.invalid">Invalid
+                Password</small>
+            </div>
+            <div class="form-group">
+              <label for="input-confirm-password" class="form-control-label">
+                Confirm Password
+              </label>
+              <input type="password" formControlName="confirmPassword" name="confirm-password"
+                id="input-confirm-password" class="form-control">
+              <small class="text-danger"
+                *ngIf="registrationForm.controls.confirmPassword.touched && (registrationForm.controls.confirmPassword.value !== registrationForm.controls.password.value)">Both
+                passwords must match</small>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="termsAndCondition"
+                name="keep-me-logged-in" id="input-keep-me-logged-in">
+              <label class="form-check-label" for="input-keep-me-logged-in">
+                I Accept Terms & Conditions
+              </label>
+            </div>
+            <button class="btn btn-primary mt-3" type="button" (click)="register()"
+              [disabled]="registrationForm.invalid || !registrationForm.controls.termsAndCondition.value">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

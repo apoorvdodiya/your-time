@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card shadow-lg my-5">
+        <div class="card-header">
+          Create Profile
+        </div>
+        <div class="card-body">
+          <div class="row my-3">
+            <div class="col-12 text-center">
+              <img class="profile-image rounded-circle shadow-lg" src="{{profilePicture}}" >
+            </div>
+          </div>
+          <form [formGroup]="profileForm">
+            <div class="form-row">
+              <div class="col-12">
+                <label>What's your good name?</label>
+              </div>
+              <div class="col-6">
+                <input type="text" formControlName="first_name" name="first-name" id="input-first-name" class="form-control" placeholder="First Name" (keydown)="setProfileImage($event )">
+              </div>
+              <div class="col-6">
+                <input type="text" formControlName="last_name" name="last-name" id="input-last-name" class="form-control" placeholder="Last Name">
+              </div>
+            </div>
+            <!-- <div class="form-row pt-3">
+              <div class="col-6">
+                Choose Your Profile Picture
+              </div>
+              <div class="col-6">
+                <input type="file">
+              </div>
+            </div> -->
+            <div class="form-row pt-3">
+              <div class="col-6">
+                Choose Your Back ground
+              </div>
+              <div class="col-6">
+                <input type="color" formControlName="background">
+              </div>
+            </div>
+            <button class="btn btn-primary mt-3" type="button" (click)="saveProfile()"
+              [disabled]="profileForm.invalid">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

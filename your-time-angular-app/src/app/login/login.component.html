@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card shadow-lg my-5">
+        <div class="card-header">
+          Login
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <label for="input-email" class="form-control-label">
+                Email
+              </label>
+              <input type="text" formControlName="email" name="email" id="input-email" class="form-control">
+              <small class="text-danger" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">Please Enter Email</small>
+            </div>
+            <div class="form-group">
+              <label for="input-password" class="form-control-label">
+                Password
+              </label>
+              <input type="password" formControlName="password" name="password" id="input-password" class="form-control">
+              <small class="text-danger" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">Please Enter Password</small>
+            </div>
+            <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="keep-me-logged-in" id="input-keep-me-logged-in">
+              <label class="form-check-label" for="input-keep-me-logged-in">
+                Keep me logged in
+              </label>
+            </div> -->
+            <button class="btn btn-primary mt-3" type="button" [disabled]="loginForm.invalid" (click)="login()">
+              Login
+            </button>
+          </form>
+          <div class="text-danger mt-2" *ngIf="loginForm.pristine && invalidCredentials">Invalid Credentials</div>
+        </div>
+        <div class="card-footer">
+          Don't have and account? <a href="./register">Create Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.container {
+  min-height: 1000vh;
+}
+
+.profile-img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.bg-lightgray {
+  background: lightgray;
+}
+
+input.display-4 {
+  background: transparent;
+  width: 40%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (max-width: 678px) {
+  .profile-img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+}

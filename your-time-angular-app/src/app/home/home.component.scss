@@ -1,0 +1,21 @@
+.container {
+  min-height: 100vh;
+  background-repeat: no-repeat; 
+}
+
+.btn {
+  border-radius: 15px;
+}
+
+.custom-input {
+  border: 0;
+  background: lightgray;
+  height: 21px;
+  border-radius: 15px;
+  width: 70px;
+  padding: 0;
+}
+
+svg {
+  cursor: pointer;
+}

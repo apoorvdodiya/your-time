@@ -1,0 +1,6 @@
+<ngx-spinner bdColor="rgba(187,193,201,0.05)" size="medium" color="#3d3d3d" bdOpacity="0" type="line-spin-fade"> </ngx-spinner>
+<div class="container-main" [ngStyle]="{ background: profile?.background || 'lightsteelblue'}">
+  <app-header [profile]="profile"></app-header>
+  <router-outlet></router-outlet>
+  <!-- <app-footer></app-footer> -->
+</div>
